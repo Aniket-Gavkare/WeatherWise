@@ -1,3 +1,22 @@
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    z-index: 1000;
+}
+
+.loading-overlay img {
+    width: 100px;
+    height: 100px; 
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -9,6 +28,7 @@
     outline: none;
     overflow: hidden;
 }
+
 body {
     font-family: Arial, sans-serif;
     height: 100vh;
@@ -17,8 +37,8 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    color: white;
 }
+
 header {
     background-color: #2a2a2a;
     padding: 0.5rem 5rem;
@@ -26,32 +46,39 @@ header {
     justify-content: space-between;
     align-items: center;
 }
+
 .logo {
     font-weight: bold;
     font-size: 1.3rem;
+    color: white;
 }
-.search{
+
+.search {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
 }
-.search input{
+
+.search input {
     background: white;
     color: #555;
     padding: 11px 25px;
     font-size: 0.8rem;
     border-radius: 30px;
 }
-.search button{
+
+.search button {
     background: white;
     border-radius: 50%;
     width: 2.5rem;
     height: 2.5rem;
 }
-.search button img{
+
+.search button img {
     width: 1.5em;
 }
+
 .heading {
     margin: 2rem;
     padding: 2rem;
@@ -60,29 +87,40 @@ header {
     justify-content: center;
     align-items: center;
 }
+
 main {
     padding: 2rem;
     min-height: 100vh;
     max-width: 1200px;
     margin: 0 auto;
 }
+
 h1 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     margin-bottom: 0.5rem;
+    color: white;
 }
+
 h2 {
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-weight: normal;
     margin-top: 0;
+    color: white;
 }
+
 .weather-cards {
     display: flex;
     gap: 1rem;
     margin-top: 2rem;
     height: 400px;            
 }
+
 .weather-card {
-    background-color: #3a3a3a;
+
+    background-position-x: center ;
+    background-position-y: 85px ;
+    background-size: cover;
+    aspect-ratio: 1;
     border-radius: 10px;
     padding: 1rem;
     flex: 1;
@@ -90,13 +128,16 @@ h2 {
     cursor: pointer;
     position: relative;
 }
+
 .weather-card.active {
     flex: 3;
 }
+
 .weather-icon {
     font-size: 3rem;
     margin-bottom: 1rem;
 }
+
 .weather-details {
     position: absolute; 
     bottom: 2rem; 
@@ -107,15 +148,18 @@ h2 {
     transform: translateX(-100%); 
     transition: transform 0.3s ease, opacity 1.5s ease, visibility 0s ease;
 }
+
 .weather-card.active .weather-details {
     opacity: 1;
     visibility: visible;
     transform: translateX(0);
 }
+
 .temp {
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
 }
+
 .conditions {
     display: flex;
     justify-content: space-between;
