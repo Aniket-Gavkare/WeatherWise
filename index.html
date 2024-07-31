@@ -4,131 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nomad Navigators - Weather Forecast</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: inherit;
-            color: inherit;
-            text-decoration: none;
-            list-style: none;
-            outline: none;
-            overflow: hidden;
-        }
-        body {
-            font-family: Arial, sans-serif;
-            height: 100vh;
-            background-image: url(./assets/balck-white.jpg);
-            background-repeat: none;
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            color: white;
-        }
-        header {
-            background-color: #2a2a2a;
-            padding: 1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .logo {
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-        .search{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        .search input{
-            background: white;
-            color: #555;
-            padding: 11px 25px;
-            font-size: 0.8rem;
-            border-radius: 30px;
-        }
-        .search button{
-            background: white;
-            border-radius: 50%;
-            width: 2.5rem;
-            height: 2.5rem;
-        }
-        .search button img{
-            width: 1.5em;
-        }
-        .heading {
-            margin: 2rem;
-            padding: 2rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        main {
-            padding: 2rem;
-            min-height: 100vh;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-        h2 {
-            font-size: 1rem;
-            font-weight: normal;
-            margin-top: 0;
-        }
-        .weather-cards {
-            display: flex;
-            gap: 1rem;
-            margin-top: 2rem;
-            height: 400px;            
-        }
-        .weather-card {
-            background-color: #3a3a3a;
-            border-radius: 10px;
-            padding: 1rem;
-            flex: 1;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            position: relative;
-        }
-        .weather-card.active {
-            flex: 3;
-        }
-        .weather-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-        .weather-details {
-            position: absolute; 
-            bottom: 2rem; 
-            left: 2rem; 
-            right: 2rem; 
-            opacity: 0;
-            visibility: hidden;
-            transform: translateX(-100%); /* Start off-screen to the left */
-            transition: transform 1.3s ease, opacity 1.5s ease, visibility 0s ease;
-        }
-        .weather-card.active .weather-details {
-            opacity: 1;
-            visibility: visible;
-            transform: translateX(0);
-            /* transition: transform 1s ease, opacity 1.5s ease, visibility 0s 2s ease; Delay visibility change when active */
-        }
-        .temp {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
-        .conditions {
-            display: flex;
-            justify-content: space-between;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
@@ -206,15 +82,6 @@
             </div>
         </div>
     </main>
-    <script>
-        const weatherCards = document.querySelectorAll('.weather-card');
-        
-        weatherCards.forEach(card => {
-            card.addEventListener('click', () => {
-                weatherCards.forEach(c => c.classList.remove('active'));
-                card.classList.add('active');
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
