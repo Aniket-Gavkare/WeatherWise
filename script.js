@@ -1,7 +1,5 @@
-// Add this JavaScript to your script.js file
-
 const apiKey = '8be3346476346db0240d7a67ac9d7003'; 
-const defaultCity = 'London';
+const defaultCity = 'pune';
 
 const weatherCardsContainer = document.querySelector('.weather-cards');
 const cityInput = document.getElementById('city-input');
@@ -107,18 +105,10 @@ searchButton.addEventListener('click', () => {
     }
 });
 
-// Optional: handle Enter key press in input field
+//handle Enter key press in input field
 cityInput.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') {
         searchButton.click();
     }
 });
 
-// Event delegation for weather cards
-weatherCardsContainer.addEventListener('click', (event) => {
-    if (event.target.closest('.weather-card')) {
-        const clickedCard = event.target.closest('.weather-card');
-        document.querySelectorAll('.weather-card').forEach(card => card.classList.remove('active'));
-        clickedCard.classList.add('active');
-    }
-});
