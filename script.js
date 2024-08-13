@@ -11,11 +11,22 @@ async function fetchWeather(city) {
     try {
         const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`);
         const data = await response.json();
+        if (data.cod !== "200") {
+            throw new Error("City not found");
+        }
         return data;
+    } catch (error) {
+        showError(error.message);
+        throw error;
     } finally {
         hideLoading();
     }
 }
+
+function showError(message) {
+    weatherCardsContainer.innerHTML = `<div class="error-message">${message}</div>`;
+}
+
 
 function showLoading() {
     loadingOverlay.style.visibility = 'visible';
